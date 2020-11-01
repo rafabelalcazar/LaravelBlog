@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Post;
-use App\Category;
+use App\Models\Post;
+use App\Models\Category;
 
 class UserController extends Controller
 {
@@ -21,4 +21,14 @@ class UserController extends Controller
     {
         return 'accion de login';
     }
+
+    public function testORM(Request $request)
+    {
+        $post = Post::all();
+        var_dump($post);
+        die();
+        // return 'accion de login';
+    }
+
+
 }
