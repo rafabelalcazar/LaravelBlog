@@ -14,7 +14,32 @@ class UserController extends Controller
 
     public function register(Request $request)
     {
-        return 'accion de registro';
+        // Catch user data from POST method
+
+        $body = $request->only([
+            'name',
+            'surname',
+            'description',
+            'email',
+            'password',
+        ]);
+
+        // return "${body}";
+
+        // Validate data
+        // Valedate if user exists
+        // crypt password
+        // Create user
+
+        $data = [
+            'status' =>'error',
+            'code'=>404,
+            'message'=>'El usuario no se ha creado',
+            'data'=>$body
+        ];
+
+
+        return response()->json($data,$data['code']);
     }
 
     public function login(Request $request)

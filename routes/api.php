@@ -20,4 +20,5 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/usuario/pruebas',[UserController::class, 'testing']);
+Route::get('/usuario',[UserController::class, 'register']);
 Route::get('/test-orm',[UserController::class, 'testORM']);
